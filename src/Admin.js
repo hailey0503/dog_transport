@@ -1,15 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import CardColumns from 'react-bootstrap/CardColumns'
 import Carousel from 'react-bootstrap/Carousel'
-//import Dog from "./dog_in_a_bag.jpg";
+import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+
 
 
 
@@ -19,7 +18,54 @@ function Admin() {
     {/* <img src={Dog} alt="website logo" /> */}
       <div className="Admin">
         
-	  	<h2>Admin</h2>;
+	  <Form>
+	  	<Form.Row>
+    		<Col>
+				
+					<Form.Label>Dog Name</Form.Label>
+					<Form.Control type="email" placeholder="name@example.com" />
+				
+			</Col>
+			<Col>
+				
+					<Form.Label>Shelter Name</Form.Label>
+					<Form.Control type="email" placeholder="name@example.com" />
+				
+			</Col>
+		</Form.Row>	
+		<Form.Row>
+			<Col>
+				
+					<Form.Label>Contact</Form.Label>
+					<Form.Control type="email" placeholder="name@example.com" />
+				
+			</Col>
+			<Col>
+				
+					<Form.Label>Email address</Form.Label>
+					<Form.Control type="email" placeholder="name@example.com" />
+				
+			</Col>
+		</Form.Row>
+		<Form.Row>
+			<Col>
+				
+					<Form.Label>Kakao ID</Form.Label>
+					<Form.Control type="email" placeholder="name@example.com" />
+				
+			</Col>
+			<Col>
+				
+					<Form.Label>Destination Airport</Form.Label>
+					<Form.Control type="email" placeholder="name@example.com" />
+				
+			</Col>
+		</Form.Row>	
+
+			<Form.Label>Message</Form.Label>
+			<Form.Control as="textarea" rows={3} />
+		
+		</Form>
       </div>
     </div>
   );
