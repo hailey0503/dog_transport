@@ -1,51 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Form from 'react-bootstrap/Form'
-import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container'
-//import Dog from "./dog_in_a_bag.jpg";
+import React from "react";
+import Home from "./Home.js"
+import Admin from "./Admin.js"
+import Users from "./Users.js"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-
-function App() {
+export default function App() {
   return (
-    <div>
-    {/* <img src={Dog} alt="website logo" /> */}
-      <div className="App">
-        
-        <Container>
-          <Form>
-            <Form.Row className="align-items-center">
-              <Col xs= {4}>
-                <Form.Label htmlFor="inlineFormInput" srOnly>
-                  Destination
-                </Form.Label>
-                
-                  <Form.Control className="mb-2" type="text" placeholder="Destination" />
-               
-              </Col>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/admin">Admin</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
 
-              <Col xs= {4}>
-                <Form.Label htmlFor="inlineFormInputGroup" srOnly>
-                  Data
-                </Form.Label>
-                
-                 
-                  <Form.Control className="mb-2" type="date" id="start" name="trip-start" value="2021-01-22"
-                  min="2021-01-01" max="2021-12-31" />
-                
-              </Col>
-              <Col xs= "auto">
-              <Button type="info" className="mb-2"> Submit</Button>
-              </Col>
-            </Form.Row>
-          </Form>
-        </Container>
-
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/admin">
+            <Admin />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-    </div>
+    </Router>
   );
 }
 
-export default App;
